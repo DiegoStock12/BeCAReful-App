@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/launcher_logo_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ly_text_user_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_pic"
+        app:layout_constraintStart_toEndOf="@+id/profile_pic"
+        app:layout_constraintTop_toTopOf="@+id/profile_pic">
+
+
+        <TextView
+            android:id="@+id/settings_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Ana Barros"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sinc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sincronización activa"
+            app:layout_constraintTop_toBottomOf="@+id/settings_name" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

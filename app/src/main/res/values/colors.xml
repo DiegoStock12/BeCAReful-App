@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Main colors of the interface-->
+    <color name="colorSecondary">#5e35b1</color>
+    <color name="colorSecondaryDark">#27057f</color>
+    <color name="colorSecondaryLight">#9061e2</color>
+
+    <!--Secondary colors for the UI-->
+    <color name="colorPrimary">#e0e0e0</color>
+    <color name="colorPrimaryDark">#aeaeae</color>
+    <color name="colorPrimaryLight">#ffffff</color>
+
+    <!--Colors of some text in the interface-->
+    <color name="colorSafeTemperature">#64dd17</color>
+    <color name="colorDangerousTemperature">#e53935</color>
+    <color name="colorWarningTemperature">#edb717</color>
+
+
+</resources>

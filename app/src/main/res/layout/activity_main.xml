@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/image_map"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:padding="24dp"
+        android:src="@drawable/mapa" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_map"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="48dp"
+        android:paddingTop="24dp">
+
+        <TextView
+            android:id="@+id/tv_title_datos_vehiculo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:text="Datos del Vehículo"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_datos_vehiculo"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/image_car_main_activity"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/car_material" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/image_car_main_activity"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_modelo_coche"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Audi A3"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_color_coche"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_modelo_coche"
+                    android:layout_centerHorizontal="true"
+                    android:text="Negro" />
+
+                <TextView
+                    android:id="@+id/tv_temperatura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_color_coche"
+                    android:layout_centerHorizontal="true"
+                    android:text="24 ºC"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_estado_peligro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_temperatura"
+                    android:layout_centerHorizontal="true"
+                    android:text="safe"
+                    android:textColor="#39FF14"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

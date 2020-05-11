@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">beCAReful</string>
+
+    <!--Modelo del vehiculo-->
+    <string name="pref_vehicle_model_dialog">Introducir datos</string>
+    <string name="pref_vehicle_model_label">Modelo del vehículo</string>
+    <string name="pref_vehicle_model_key">vehicle_model</string>
+    <string name="pref_vehicle_model_summary">Pulse para introducir el modelo de su vehículo</string>
+
+    <!--Color del vehiculo-->
+    <string name="pref_vehicle_color_dialog">Seleccionar color</string>
+    <string name="pref_vehicle_color_label">Color del Vehículo</string>
+    <string name="pref_vehicle_color_key">vehicle_color</string>
+    <string name="pref_vehicle_color_summary">Pulse para seleccionar el color de su vehículo</string>
+
+    <!--Matrícula del vehiculo-->
+    <string name="pref_vehicle_plate_dialog">Introducir Matrícula</string>
+    <string name="pref_vehicle_plate_label">Matrícula del Vehículo</string>
+    <string name="pref_vehicle_plate_key">vehicle_plate</string>
+    <string name="pref_vehicle_plate_summary">Pulse para introducir la matrícula de su vehículo</string>
+
+    <string name="google_maps_api_key">AIzaSyBsHteQbafe3SzMpOdmBtYam1cIalIu87Y</string>
+
+    <string name="title_activity_switch">SwitchActivity</string>
+
+    <string name="shared_preferences_file">BecarefulSharedPrefs</string>
+
+    <!--Shared Preferences Keys-->
+    <string name="userIdKey">userID</string>
+    <string name="vehicleIdKey">vehicleID</string>
+    <string name="userNameKey">userName</string>
+
+</resources>

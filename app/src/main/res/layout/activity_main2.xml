@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pull_to_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- This has to be a nested scrollview so that it can be independent the
+    scrolling from the SwipeRefreshLayout-->
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <android.support.design.card.MaterialCardView
+                android:id="@+id/card_map"
+                style="@style/CardStyle"
+                android:paddingBottom="16dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <fragment
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+
+                        />
+
+                    <!-- This view COVERS the map fragment but is transparent, this way we can tell
+                    when the map is touched and disable the nestedScrollView and SwipeRefreshLayout
+                    scrolling and just move the map -->
+                    <View
+                        android:id="@+id/transparent_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@android:color/transparent" />
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif"
+                        android:text="LOCATION"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/map" />
+
+                    <TextView
+                        android:id="@+id/tv_coordinates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_city"
+                        app:layout_constraintStart_toStartOf="@+id/tv_city"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_city"
+                        tools:text="(42.1718,-8.6956)" />
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_geo_timestamp"
+                        tools:text="Vigo, Spain" />
+
+                    <TextView
+                        android:id="@+id/tv_geo_timestamp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_location"
+                        tools:text="at 19:51" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.design.card.MaterialCardView>
+
+            <android.support.design.card.MaterialCardView
+                android:id="@+id/card_thermometer"
+                style="@style/CardStyle"
+
+                >
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/image_thermometer"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/thermometer_half" />
+
+
+                    <TextView
+                        android:id="@+id/tv_temperature_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="TEMP"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_temperature_value"
+                        app:layout_constraintStart_toStartOf="@+id/tv_temperature_value" />
+
+                    <TextView
+                        android:id="@+id/tv_temperature_value"
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textSize="35sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/centralReference"
+                        app:layout_constraintStart_toEndOf="@+id/image_thermometer"
+                        app:layout_constraintTop_toTopOf="@+id/centralReference"
+                        tools:text="22 ºC" />
+
+
+                    <ImageView
+                        android:id="@+id/centralReference"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+                    <TextView
+                        android:id="@+id/tv_status_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="STATUS"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_status_value"
+                        app:layout_constraintStart_toStartOf="@+id/tv_status_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_temperature_label"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/tv_status_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textColor="@color/colorSafeTemperature"
+                        android:textSize="35sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_temperature_value"
+                        app:layout_constraintEnd_toEndOf="@+id/centralReference"
+                        app:layout_constraintStart_toEndOf="@+id/tv_temperature_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_temperature_value"
+                        tools:text="SAFE" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.design.card.MaterialCardView>
+
+            <android.support.design.card.MaterialCardView
+                android:id="@+id/card_presence"
+                style="@style/CardStyle"
+                android:layout_marginBottom="8dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/person_dog"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_presence_detected_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="40dp"
+                        android:fontFamily="sans-serif"
+                        android:text="PRESENCE DETECTED"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_presence_detected_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35sp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_presence_detected_label"
+                        app:layout_constraintStart_toStartOf="@+id/tv_presence_detected_label"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_presence_detected_label"
+                        tools:text="YES" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.design.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_last_updated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="last updated: "
+                android:textSize="10sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.v4.widget.SwipeRefreshLayout>

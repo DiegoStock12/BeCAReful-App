@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Usuario">
+        <Preference
+            android:layout="@layout/profile_pic_settings">
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Datos del vehículo">
+        <EditTextPreference
+            android:dialogTitle="@string/pref_vehicle_model_dialog"
+            android:key="@string/pref_vehicle_model_key"
+            android:summary="@string/pref_vehicle_model_summary"
+            android:title="@string/pref_vehicle_model_label"
+            android:inputType="text"
+            />
+        <ListPreference
+            android:dialogTitle="@string/pref_vehicle_color_dialog"
+            android:entries="@array/settings_list_vehicle_color"
+            android:entryValues="@array/settings_list_vehicle_color"
+            android:key="@string/pref_vehicle_color_key"
+            android:summary="@string/pref_vehicle_color_summary"
+            android:title="@string/pref_vehicle_color_label"
+            />
+
+        <EditTextPreference
+            android:dialogTitle="@string/pref_vehicle_plate_dialog"
+            android:key="@string/pref_vehicle_plate_key"
+            android:summary="@string/pref_vehicle_plate_summary"
+            android:title="@string/pref_vehicle_plate_label"
+            android:inputType="text"
+            />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
