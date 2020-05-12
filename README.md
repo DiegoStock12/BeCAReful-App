@@ -1,8 +1,9 @@
 # BeCAReful Android Application
 
 
-
-<img src="images/screenshot.jpg" alt="becareful-screenshot" style="zoom:33%;" />
+<p align="center">
+  <img src="images/screenshot.jpg" alt="becareful-screenshot" width="400" />
+</p>
 
 
 
